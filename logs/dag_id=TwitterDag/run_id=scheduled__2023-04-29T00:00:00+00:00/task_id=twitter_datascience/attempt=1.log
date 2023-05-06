@@ -1,0 +1,39 @@
+[2023-05-04 19:02:06,047] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: TwitterDag.twitter_datascience scheduled__2023-04-29T00:00:00+00:00 [queued]>
+[2023-05-04 19:02:06,066] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: TwitterDag.twitter_datascience scheduled__2023-04-29T00:00:00+00:00 [queued]>
+[2023-05-04 19:02:06,067] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-04 19:02:06,067] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-05-04 19:02:06,067] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-04 19:02:06,111] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): twitter_datascience> on 2023-04-29 00:00:00+00:00
+[2023-05-04 19:02:06,115] {standard_task_runner.py:52} INFO - Started process 38615 to run task
+[2023-05-04 19:02:06,126] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'TwitterDag', 'twitter_datascience', 'scheduled__2023-04-29T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpsduuczuw', '--error-file', '/tmp/tmpaa1jw398']
+[2023-05-04 19:02:06,127] {standard_task_runner.py:80} INFO - Job 12: Subtask twitter_datascience
+[2023-05-04 19:02:06,237] {task_command.py:370} INFO - Running <TaskInstance: TwitterDag.twitter_datascience scheduled__2023-04-29T00:00:00+00:00 [running]> on host kirsch-Virtual-Machine
+[2023-05-04 19:02:06,394] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=TwitterDag
+AIRFLOW_CTX_TASK_ID=twitter_datascience
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-29T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-04-29T00:00:00+00:00
+[2023-05-04 19:02:06,410] {base.py:68} INFO - Using connection ID 'twitter_default' for task execution.
+[2023-05-04 19:02:06,419] {logging_mixin.py:115} WARNING - /home/kirsch/airflowalura/venv/lib/python3.10/site-packages/airflow/models/connection.py:294 DeprecationWarning: Encountered non-JSON in `extra` field for connection 'twitter_default'. Support for non-JSON `extra` will be removed in Airflow 3.0
+[2023-05-04 19:02:06,420] {connection.py:403} ERROR - Failed parsing the json for conn_id twitter_default
+Traceback (most recent call last):
+  File "/home/kirsch/airflowalura/venv/lib/python3.10/site-packages/airflow/models/connection.py", line 400, in extra_dejson
+    obj = json.loads(self.extra)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+[2023-05-04 19:02:06,425] {twitter_hook.py:31} INFO - URL: https://labdados.com/2/tweets/search/recent?query=datascience&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2023-04-29T00:00:00.00Z&end_time=2023-04-30T00:00:00.00Z
+[2023-05-04 19:02:07,004] {twitter_hook.py:31} INFO - URL: https://labdados.com/2/tweets/search/recent?query=datascience&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2023-04-29T00:00:00.00Z&end_time=2023-04-30T00:00:00.00Z&next_token=1234567890abcdef
+[2023-05-04 19:02:07,147] {twitter_hook.py:31} INFO - URL: https://labdados.com/2/tweets/search/recent?query=datascience&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2023-04-29T00:00:00.00Z&end_time=2023-04-30T00:00:00.00Z&next_token=1234567890abcdef
+[2023-05-04 19:02:07,301] {twitter_hook.py:31} INFO - URL: https://labdados.com/2/tweets/search/recent?query=datascience&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2023-04-29T00:00:00.00Z&end_time=2023-04-30T00:00:00.00Z&next_token=1234567890abcdef
+[2023-05-04 19:02:07,470] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=TwitterDag, task_id=twitter_datascience, execution_date=20230429T000000, start_date=20230504T220206, end_date=20230504T220207
+[2023-05-04 19:02:07,551] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-05-04 19:02:07,608] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
