@@ -1999,3 +1999,10 @@ ModuleNotFoundError: No module named 'operators'
 [2023-05-09 13:11:32,395] {logging_mixin.py:115} INFO - [2023-05-09 13:11:32,395] {dag.py:2379} INFO - Sync 1 DAGs
 [2023-05-09 13:11:32,409] {logging_mixin.py:115} INFO - [2023-05-09 13:11:32,409] {dag.py:2927} INFO - Setting next_dagrun for TwitterDag to 2023-05-09T00:00:00+00:00, run_after=2023-05-10T00:00:00+00:00
 [2023-05-09 13:11:32,424] {processor.py:161} INFO - Processing /home/kirsch/airflow-alura/dags/twitter_dag.py took 0.059 seconds
+[2023-05-09 13:12:02,525] {processor.py:153} INFO - Started process (PID=25970) to work on /home/kirsch/airflow-alura/dags/twitter_dag.py
+[2023-05-09 13:12:02,534] {processor.py:641} INFO - Processing file /home/kirsch/airflow-alura/dags/twitter_dag.py for tasks to queue
+[2023-05-09 13:12:02,535] {logging_mixin.py:115} INFO - [2023-05-09 13:12:02,535] {dagbag.py:507} INFO - Filling up the DagBag from /home/kirsch/airflow-alura/dags/twitter_dag.py
+[2023-05-09 13:12:02,555] {processor.py:651} INFO - DAG(s) dict_keys(['TwitterDag']) retrieved from /home/kirsch/airflow-alura/dags/twitter_dag.py
+[2023-05-09 13:12:02,573] {logging_mixin.py:115} INFO - [2023-05-09 13:12:02,573] {dag.py:2379} INFO - Sync 1 DAGs
+[2023-05-09 13:12:02,600] {logging_mixin.py:115} INFO - [2023-05-09 13:12:02,599] {dag.py:2927} INFO - Setting next_dagrun for TwitterDag to 2023-05-09T00:00:00+00:00, run_after=2023-05-10T00:00:00+00:00
+[2023-05-09 13:12:02,643] {processor.py:161} INFO - Processing /home/kirsch/airflow-alura/dags/twitter_dag.py took 0.122 seconds
