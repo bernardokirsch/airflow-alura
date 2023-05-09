@@ -1,4 +1,4 @@
-#!/home/kirsch/airflowalura/venv/bin/python3.10
+#!/home/kirsch/airflow-alura/venv/bin/python3.10
 # EASY-INSTALL-ENTRY-SCRIPT: 'python-nvd3==0.15.0','console_scripts','nvd3'
 import re
 import sys

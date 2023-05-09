@@ -1,0 +1,218 @@
+[2023-05-09 10:55:27,512] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: TwitterDag.insight_twitter scheduled__2023-05-05T00:00:00+00:00 [queued]>
+[2023-05-09 10:55:27,519] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: TwitterDag.insight_twitter scheduled__2023-05-05T00:00:00+00:00 [queued]>
+[2023-05-09 10:55:27,520] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-09 10:55:27,520] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-05-09 10:55:27,520] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-09 10:55:27,548] {taskinstance.py:1377} INFO - Executing <Task(SparkSubmitOperator): insight_twitter> on 2023-05-05 00:00:00+00:00
+[2023-05-09 10:55:27,550] {standard_task_runner.py:52} INFO - Started process 18439 to run task
+[2023-05-09 10:55:27,554] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'TwitterDag', 'insight_twitter', 'scheduled__2023-05-05T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpw7pjnlnj', '--error-file', '/tmp/tmpizooc0qt']
+[2023-05-09 10:55:27,556] {standard_task_runner.py:80} INFO - Job 20: Subtask insight_twitter
+[2023-05-09 10:55:27,617] {task_command.py:370} INFO - Running <TaskInstance: TwitterDag.insight_twitter scheduled__2023-05-05T00:00:00+00:00 [running]> on host kirsch-Virtual-Machine
+[2023-05-09 10:55:27,713] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=TwitterDag
+AIRFLOW_CTX_TASK_ID=insight_twitter
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-05T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-05T00:00:00+00:00
+[2023-05-09 10:55:27,720] {base.py:68} INFO - Using connection ID 'spark_default' for task execution.
+[2023-05-09 10:55:27,724] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master local --name insight_twitter /home/kirsch/airflow-alura/src/spark/insight_tweet.py --src /home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/ --dest /home/kirsch/airflow-alura/datalake/Gold/twitter_datascience/ --process-date 2023-05-05
+[2023-05-09 10:55:29,429] {spark_submit.py:490} INFO - 23/05/09 10:55:29 WARN Utils: Your hostname, kirsch-Virtual-Machine resolves to a loopback address: 127.0.1.1; using 172.18.244.229 instead (on interface eth0)
+[2023-05-09 10:55:29,430] {spark_submit.py:490} INFO - 23/05/09 10:55:29 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2023-05-09 10:55:30,553] {spark_submit.py:490} INFO - Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[2023-05-09 10:55:30,565] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO SparkContext: Running Spark version 3.2.4
+[2023-05-09 10:55:30,684] {spark_submit.py:490} INFO - 23/05/09 10:55:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2023-05-09 10:55:30,796] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO ResourceUtils: ==============================================================
+[2023-05-09 10:55:30,797] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2023-05-09 10:55:30,797] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO ResourceUtils: ==============================================================
+[2023-05-09 10:55:30,798] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO SparkContext: Submitted application: twitter_transformation
+[2023-05-09 10:55:30,837] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2023-05-09 10:55:30,862] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO ResourceProfile: Limiting resource is cpu
+[2023-05-09 10:55:30,864] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2023-05-09 10:55:30,952] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO SecurityManager: Changing view acls to: kirsch
+[2023-05-09 10:55:30,952] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO SecurityManager: Changing modify acls to: kirsch
+[2023-05-09 10:55:30,952] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO SecurityManager: Changing view acls groups to:
+[2023-05-09 10:55:30,953] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO SecurityManager: Changing modify acls groups to:
+[2023-05-09 10:55:30,954] {spark_submit.py:490} INFO - 23/05/09 10:55:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(kirsch); groups with view permissions: Set(); users  with modify permissions: Set(kirsch); groups with modify permissions: Set()
+[2023-05-09 10:55:31,271] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO Utils: Successfully started service 'sparkDriver' on port 37201.
+[2023-05-09 10:55:31,311] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO SparkEnv: Registering MapOutputTracker
+[2023-05-09 10:55:31,368] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO SparkEnv: Registering BlockManagerMaster
+[2023-05-09 10:55:31,396] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2023-05-09 10:55:31,398] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2023-05-09 10:55:31,406] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2023-05-09 10:55:31,452] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-c05a6f9c-e301-46b8-b5d4-ee73e4677982
+[2023-05-09 10:55:31,500] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+[2023-05-09 10:55:31,595] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO SparkEnv: Registering OutputCommitCoordinator
+[2023-05-09 10:55:31,966] {spark_submit.py:490} INFO - 23/05/09 10:55:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2023-05-09 10:55:32,054] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://kirsch-Virtual-Machine.mshome.net:4040
+[2023-05-09 10:55:32,354] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO Executor: Starting executor ID driver on host kirsch-Virtual-Machine.mshome.net
+[2023-05-09 10:55:32,398] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42155.
+[2023-05-09 10:55:32,398] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO NettyBlockTransferService: Server created on kirsch-Virtual-Machine.mshome.net:42155
+[2023-05-09 10:55:32,400] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2023-05-09 10:55:32,408] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, kirsch-Virtual-Machine.mshome.net, 42155, None)
+[2023-05-09 10:55:32,416] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO BlockManagerMasterEndpoint: Registering block manager kirsch-Virtual-Machine.mshome.net:42155 with 366.3 MiB RAM, BlockManagerId(driver, kirsch-Virtual-Machine.mshome.net, 42155, None)
+[2023-05-09 10:55:32,419] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, kirsch-Virtual-Machine.mshome.net, 42155, None)
+[2023-05-09 10:55:32,420] {spark_submit.py:490} INFO - 23/05/09 10:55:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, kirsch-Virtual-Machine.mshome.net, 42155, None)
+[2023-05-09 10:55:33,103] {spark_submit.py:490} INFO - 23/05/09 10:55:33 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2023-05-09 10:55:33,147] {spark_submit.py:490} INFO - 23/05/09 10:55:33 INFO SharedState: Warehouse path is 'file:/home/kirsch/airflow-alura/spark-warehouse'.
+[2023-05-09 10:55:34,216] {spark_submit.py:490} INFO - 23/05/09 10:55:34 INFO InMemoryFileIndex: It took 59 ms to list leaf files for 1 paths.
+[2023-05-09 10:55:34,500] {spark_submit.py:490} INFO - 23/05/09 10:55:34 INFO InMemoryFileIndex: It took 11 ms to list leaf files for 4 paths.
+[2023-05-09 10:55:37,272] {spark_submit.py:490} INFO - 23/05/09 10:55:37 INFO FileSourceStrategy: Pushed Filters:
+[2023-05-09 10:55:37,273] {spark_submit.py:490} INFO - 23/05/09 10:55:37 INFO FileSourceStrategy: Post-Scan Filters:
+[2023-05-09 10:55:37,276] {spark_submit.py:490} INFO - 23/05/09 10:55:37 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+[2023-05-09 10:55:37,676] {spark_submit.py:490} INFO - 23/05/09 10:55:37 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 338.2 KiB, free 366.0 MiB)
+[2023-05-09 10:55:37,793] {spark_submit.py:490} INFO - 23/05/09 10:55:37 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 32.5 KiB, free 365.9 MiB)
+[2023-05-09 10:55:37,801] {spark_submit.py:490} INFO - 23/05/09 10:55:37 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on kirsch-Virtual-Machine.mshome.net:42155 (size: 32.5 KiB, free: 366.3 MiB)
+[2023-05-09 10:55:37,810] {spark_submit.py:490} INFO - 23/05/09 10:55:37 INFO SparkContext: Created broadcast 0 from json at NativeMethodAccessorImpl.java:0
+[2023-05-09 10:55:37,827] {spark_submit.py:490} INFO - 23/05/09 10:55:37 INFO FileSourceScanExec: Planning scan with bin packing, max size: 16799618 bytes, open cost is considered as scanning 4194304 bytes.
+[2023-05-09 10:55:38,068] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+[2023-05-09 10:55:38,104] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO DAGScheduler: Got job 0 (json at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2023-05-09 10:55:38,104] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO DAGScheduler: Final stage: ResultStage 0 (json at NativeMethodAccessorImpl.java:0)
+[2023-05-09 10:55:38,105] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO DAGScheduler: Parents of final stage: List()
+[2023-05-09 10:55:38,107] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO DAGScheduler: Missing parents: List()
+[2023-05-09 10:55:38,114] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2023-05-09 10:55:38,255] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 12.5 KiB, free 365.9 MiB)
+[2023-05-09 10:55:38,257] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.5 KiB, free 365.9 MiB)
+[2023-05-09 10:55:38,258] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on kirsch-Virtual-Machine.mshome.net:42155 (size: 6.5 KiB, free: 366.3 MiB)
+[2023-05-09 10:55:38,259] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1474
+[2023-05-09 10:55:38,276] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2023-05-09 10:55:38,276] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2023-05-09 10:55:38,343] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (kirsch-Virtual-Machine.mshome.net, executor driver, partition 0, PROCESS_LOCAL, 5543 bytes) taskResourceAssignments Map()
+[2023-05-09 10:55:38,361] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2023-05-09 10:55:38,839] {spark_submit.py:490} INFO - 23/05/09 10:55:38 INFO FileScanRDD: Reading File path: file:///home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/tweet/process_date=2023-05-03/part-00000-392b4dd5-07c2-4015-b647-6e50985da527-c000.json, range: 0-11142, partition values: [empty row]
+[2023-05-09 10:55:39,088] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO CodeGenerator: Code generated in 188.698429 ms
+[2023-05-09 10:55:39,156] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO FileScanRDD: Reading File path: file:///home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/tweet/process_date=2023-05-06/part-00000-6e1893d5-6654-4973-b90d-68f40c3b6f51-c000.json, range: 0-6789, partition values: [empty row]
+[2023-05-09 10:55:39,171] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO FileScanRDD: Reading File path: file:///home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/tweet/process_date=2023-05-05/part-00000-1edd912d-e238-4602-bacc-ec7a6d1d2354-c000.json, range: 0-2253, partition values: [empty row]
+[2023-05-09 10:55:39,176] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO FileScanRDD: Reading File path: file:///home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/tweet/process_date=2023-05-04/part-00000-b635e9bf-379b-4f56-923a-6c34d3a511f1-c000.json, range: 0-2218, partition values: [empty row]
+[2023-05-09 10:55:39,208] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2275 bytes result sent to driver
+[2023-05-09 10:55:39,221] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 892 ms on kirsch-Virtual-Machine.mshome.net (executor driver) (1/1)
+[2023-05-09 10:55:39,224] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2023-05-09 10:55:39,230] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO DAGScheduler: ResultStage 0 (json at NativeMethodAccessorImpl.java:0) finished in 1,086 s
+[2023-05-09 10:55:39,238] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2023-05-09 10:55:39,238] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2023-05-09 10:55:39,242] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO DAGScheduler: Job 0 finished: json at NativeMethodAccessorImpl.java:0, took 1,171940 s
+[2023-05-09 10:55:39,679] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO DataSourceStrategy: Pruning directories with:
+[2023-05-09 10:55:39,679] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO FileSourceStrategy: Pushed Filters:
+[2023-05-09 10:55:39,679] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO FileSourceStrategy: Post-Scan Filters:
+[2023-05-09 10:55:39,680] {spark_submit.py:490} INFO - 23/05/09 10:55:39 INFO FileSourceStrategy: Output Data Schema: struct<author_id: string, created_at: string, like_count: bigint, quote_count: bigint, reply_count: bigint ... 1 more field>
+[2023-05-09 10:55:40,178] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO CodeGenerator: Code generated in 157.299975 ms
+[2023-05-09 10:55:40,189] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 338.0 KiB, free 365.6 MiB)
+[2023-05-09 10:55:40,204] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 32.5 KiB, free 365.6 MiB)
+[2023-05-09 10:55:40,205] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on kirsch-Virtual-Machine.mshome.net:42155 (size: 32.5 KiB, free: 366.2 MiB)
+[2023-05-09 10:55:40,206] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO SparkContext: Created broadcast 2 from json at NativeMethodAccessorImpl.java:0
+[2023-05-09 10:55:40,210] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO FileSourceScanExec: Planning scan with bin packing, max size: 16799618 bytes, open cost is considered as scanning 4194304 bytes.
+[2023-05-09 10:55:40,314] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: Registering RDD 7 (json at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+[2023-05-09 10:55:40,323] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: Got map stage job 1 (json at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2023-05-09 10:55:40,324] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: Final stage: ShuffleMapStage 1 (json at NativeMethodAccessorImpl.java:0)
+[2023-05-09 10:55:40,325] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: Parents of final stage: List()
+[2023-05-09 10:55:40,326] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: Missing parents: List()
+[2023-05-09 10:55:40,331] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[7] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2023-05-09 10:55:40,363] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 46.9 KiB, free 365.5 MiB)
+[2023-05-09 10:55:40,367] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 20.6 KiB, free 365.5 MiB)
+[2023-05-09 10:55:40,371] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on kirsch-Virtual-Machine.mshome.net:42155 (size: 20.6 KiB, free: 366.2 MiB)
+[2023-05-09 10:55:40,372] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1474
+[2023-05-09 10:55:40,373] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[7] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2023-05-09 10:55:40,373] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2023-05-09 10:55:40,376] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (kirsch-Virtual-Machine.mshome.net, executor driver, partition 0, PROCESS_LOCAL, 5605 bytes) taskResourceAssignments Map()
+[2023-05-09 10:55:40,376] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+[2023-05-09 10:55:40,443] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO CodeGenerator: Code generated in 18.983793 ms
+[2023-05-09 10:55:40,485] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO CodeGenerator: Code generated in 16.616582 ms
+[2023-05-09 10:55:40,511] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO CodeGenerator: Code generated in 13.352366 ms
+[2023-05-09 10:55:40,539] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO CodeGenerator: Code generated in 15.454776 ms
+[2023-05-09 10:55:40,554] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO FileScanRDD: Reading File path: file:///home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/tweet/process_date=2023-05-03/part-00000-392b4dd5-07c2-4015-b647-6e50985da527-c000.json, range: 0-11142, partition values: [19480]
+[2023-05-09 10:55:40,578] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO CodeGenerator: Code generated in 16.820782 ms
+[2023-05-09 10:55:40,655] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO FileScanRDD: Reading File path: file:///home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/tweet/process_date=2023-05-06/part-00000-6e1893d5-6654-4973-b90d-68f40c3b6f51-c000.json, range: 0-6789, partition values: [19483]
+[2023-05-09 10:55:40,669] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO FileScanRDD: Reading File path: file:///home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/tweet/process_date=2023-05-05/part-00000-1edd912d-e238-4602-bacc-ec7a6d1d2354-c000.json, range: 0-2253, partition values: [19482]
+[2023-05-09 10:55:40,763] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO FileScanRDD: Reading File path: file:///home/kirsch/airflow-alura/datalake/Silver/twitter_datascience/tweet/process_date=2023-05-04/part-00000-b635e9bf-379b-4f56-923a-6c34d3a511f1-c000.json, range: 0-2218, partition values: [19481]
+[2023-05-09 10:55:40,943] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 3004 bytes result sent to driver
+[2023-05-09 10:55:40,949] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 573 ms on kirsch-Virtual-Machine.mshome.net (executor driver) (1/1)
+[2023-05-09 10:55:40,950] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2023-05-09 10:55:40,960] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: ShuffleMapStage 1 (json at NativeMethodAccessorImpl.java:0) finished in 0,617 s
+[2023-05-09 10:55:40,961] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: looking for newly runnable stages
+[2023-05-09 10:55:40,962] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: running: Set()
+[2023-05-09 10:55:40,963] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: waiting: Set()
+[2023-05-09 10:55:40,963] {spark_submit.py:490} INFO - 23/05/09 10:55:40 INFO DAGScheduler: failed: Set()
+[2023-05-09 10:55:41,010] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO ShufflePartitionsUtil: For shuffle(0), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2023-05-09 10:55:41,191] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO CodeGenerator: Code generated in 99.189989 ms
+[2023-05-09 10:55:41,247] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Registering RDD 10 (json at NativeMethodAccessorImpl.java:0) as input to shuffle 1
+[2023-05-09 10:55:41,248] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Got map stage job 2 (json at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2023-05-09 10:55:41,249] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Final stage: ShuffleMapStage 3 (json at NativeMethodAccessorImpl.java:0)
+[2023-05-09 10:55:41,249] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+[2023-05-09 10:55:41,251] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Missing parents: List()
+[2023-05-09 10:55:41,255] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[10] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2023-05-09 10:55:41,296] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 74.0 KiB, free 365.4 MiB)
+[2023-05-09 10:55:41,299] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 28.2 KiB, free 365.4 MiB)
+[2023-05-09 10:55:41,305] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on kirsch-Virtual-Machine.mshome.net:42155 (size: 28.2 KiB, free: 366.2 MiB)
+[2023-05-09 10:55:41,307] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1474
+[2023-05-09 10:55:41,309] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[10] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2023-05-09 10:55:41,309] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+[2023-05-09 10:55:41,316] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 2) (kirsch-Virtual-Machine.mshome.net, executor driver, partition 0, NODE_LOCAL, 4442 bytes) taskResourceAssignments Map()
+[2023-05-09 10:55:41,320] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO Executor: Running task 0.0 in stage 3.0 (TID 2)
+[2023-05-09 10:55:41,388] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO ShuffleBlockFetcherIterator: Getting 1 (6.6 KiB) non-empty blocks including 1 (6.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2023-05-09 10:55:41,392] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 21 ms
+[2023-05-09 10:55:41,420] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO CodeGenerator: Code generated in 13.222965 ms
+[2023-05-09 10:55:41,436] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO CodeGenerator: Code generated in 8.270941 ms
+[2023-05-09 10:55:41,449] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO CodeGenerator: Code generated in 8.604643 ms
+[2023-05-09 10:55:41,467] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO CodeGenerator: Code generated in 7.885139 ms
+[2023-05-09 10:55:41,526] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO Executor: Finished task 0.0 in stage 3.0 (TID 2). 4705 bytes result sent to driver
+[2023-05-09 10:55:41,527] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 2) in 214 ms on kirsch-Virtual-Machine.mshome.net (executor driver) (1/1)
+[2023-05-09 10:55:41,527] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2023-05-09 10:55:41,530] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: ShuffleMapStage 3 (json at NativeMethodAccessorImpl.java:0) finished in 0,247 s
+[2023-05-09 10:55:41,530] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: looking for newly runnable stages
+[2023-05-09 10:55:41,530] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: running: Set()
+[2023-05-09 10:55:41,530] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: waiting: Set()
+[2023-05-09 10:55:41,530] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: failed: Set()
+[2023-05-09 10:55:41,541] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO ShufflePartitionsUtil: For shuffle(1), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2023-05-09 10:55:41,568] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2023-05-09 10:55:41,568] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2023-05-09 10:55:41,569] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2023-05-09 10:55:41,589] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+[2023-05-09 10:55:41,645] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO CodeGenerator: Code generated in 36.254779 ms
+[2023-05-09 10:55:41,714] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+[2023-05-09 10:55:41,718] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Got job 3 (json at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2023-05-09 10:55:41,718] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Final stage: ResultStage 6 (json at NativeMethodAccessorImpl.java:0)
+[2023-05-09 10:55:41,718] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+[2023-05-09 10:55:41,718] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Missing parents: List()
+[2023-05-09 10:55:41,719] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Submitting ResultStage 6 (CoalescedRDD[13] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2023-05-09 10:55:41,746] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 254.9 KiB, free 365.1 MiB)
+[2023-05-09 10:55:41,748] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 91.2 KiB, free 365.1 MiB)
+[2023-05-09 10:55:41,749] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on kirsch-Virtual-Machine.mshome.net:42155 (size: 91.2 KiB, free: 366.1 MiB)
+[2023-05-09 10:55:41,751] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1474
+[2023-05-09 10:55:41,752] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (CoalescedRDD[13] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2023-05-09 10:55:41,752] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+[2023-05-09 10:55:41,758] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 3) (kirsch-Virtual-Machine.mshome.net, executor driver, partition 0, NODE_LOCAL, 4729 bytes) taskResourceAssignments Map()
+[2023-05-09 10:55:41,758] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO Executor: Running task 0.0 in stage 6.0 (TID 3)
+[2023-05-09 10:55:41,815] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2023-05-09 10:55:41,815] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2023-05-09 10:55:41,816] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2023-05-09 10:55:41,875] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO ShuffleBlockFetcherIterator: Getting 1 (352.0 B) non-empty blocks including 1 (352.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2023-05-09 10:55:41,875] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+[2023-05-09 10:55:41,936] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO FileOutputCommitter: Saved output of task 'attempt_202305091055415441284965652908289_0006_m_000000_3' to file:/home/kirsch/airflow-alura/datalake/Gold/twitter_datascience/process_date=2023-05-05/_temporary/0/task_202305091055415441284965652908289_0006_m_000000
+[2023-05-09 10:55:41,937] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO SparkHadoopMapRedUtil: attempt_202305091055415441284965652908289_0006_m_000000_3: Committed
+[2023-05-09 10:55:41,962] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO Executor: Finished task 0.0 in stage 6.0 (TID 3). 6421 bytes result sent to driver
+[2023-05-09 10:55:41,964] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 3) in 211 ms on kirsch-Virtual-Machine.mshome.net (executor driver) (1/1)
+[2023-05-09 10:55:41,965] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool
+[2023-05-09 10:55:41,966] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: ResultStage 6 (json at NativeMethodAccessorImpl.java:0) finished in 0,244 s
+[2023-05-09 10:55:41,970] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2023-05-09 10:55:41,970] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO TaskSchedulerImpl: Killing all running tasks in stage 6: Stage finished
+[2023-05-09 10:55:41,972] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO DAGScheduler: Job 3 finished: json at NativeMethodAccessorImpl.java:0, took 0,256707 s
+[2023-05-09 10:55:41,976] {spark_submit.py:490} INFO - 23/05/09 10:55:41 INFO FileFormatWriter: Start to commit write Job a45f3cb5-802d-495a-8915-2b1a3d625b82.
+[2023-05-09 10:55:42,012] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO FileFormatWriter: Write Job a45f3cb5-802d-495a-8915-2b1a3d625b82 committed. Elapsed time: 32 ms.
+[2023-05-09 10:55:42,015] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO FileFormatWriter: Finished processing stats for write job a45f3cb5-802d-495a-8915-2b1a3d625b82.
+[2023-05-09 10:55:42,097] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO SparkContext: Invoking stop() from shutdown hook
+[2023-05-09 10:55:42,113] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO SparkUI: Stopped Spark web UI at http://kirsch-Virtual-Machine.mshome.net:4040
+[2023-05-09 10:55:42,133] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2023-05-09 10:55:42,151] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO MemoryStore: MemoryStore cleared
+[2023-05-09 10:55:42,152] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO BlockManager: BlockManager stopped
+[2023-05-09 10:55:42,165] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2023-05-09 10:55:42,173] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2023-05-09 10:55:42,177] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO SparkContext: Successfully stopped SparkContext
+[2023-05-09 10:55:42,177] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO ShutdownHookManager: Shutdown hook called
+[2023-05-09 10:55:42,178] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO ShutdownHookManager: Deleting directory /tmp/spark-aae1625b-69b7-414a-a185-90cbcce3df21
+[2023-05-09 10:55:42,182] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO ShutdownHookManager: Deleting directory /tmp/spark-1f09dab1-73ec-4026-b830-c8c566232e51
+[2023-05-09 10:55:42,189] {spark_submit.py:490} INFO - 23/05/09 10:55:42 INFO ShutdownHookManager: Deleting directory /tmp/spark-aae1625b-69b7-414a-a185-90cbcce3df21/pyspark-3e351f76-d902-4fb7-a730-7a0d29d2d78e
+[2023-05-09 10:55:42,253] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=TwitterDag, task_id=insight_twitter, execution_date=20230505T000000, start_date=20230509T135527, end_date=20230509T135542
+[2023-05-09 10:55:42,290] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-05-09 10:55:42,302] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

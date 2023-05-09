@@ -1,4 +1,4 @@
-#!/home/kirsch/airflowalura/venv/bin/python3.10
+#!/home/kirsch/airflow-alura/venv/bin/python3.10
 
 # $Id: rst2latex.py 5905 2009-04-16 12:04:49Z milde $
 # Author: David Goodger <goodger@python.org>

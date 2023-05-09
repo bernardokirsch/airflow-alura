@@ -1,4 +1,4 @@
-#!/home/kirsch/airflowalura/venv/bin/python3.10
+#!/home/kirsch/airflow-alura/venv/bin/python3.10
 # PYTHON_ARGCOMPLETE_OK
 
 # Copyright 2012-2021, Andrey Kislyuk and argcomplete contributors.

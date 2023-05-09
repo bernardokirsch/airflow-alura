@@ -1,4 +1,4 @@
-#!/home/kirsch/airflowalura/venv/bin/python3.10
+#!/home/kirsch/airflow-alura/venv/bin/python3.10
 
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more

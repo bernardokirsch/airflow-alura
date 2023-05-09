@@ -1,4 +1,4 @@
-#!/home/kirsch/airflowalura/venv/bin/python
+#!/home/kirsch/airflow-alura/venv/bin/python3.10
 # -*- coding: utf-8 -*-
 import re
 import sys

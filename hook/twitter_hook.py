@@ -40,7 +40,7 @@ class TwitterHook(HttpHook):
         count = 1
 
         # Paginate - next_token
-        while "next_token" in json_response.get('meta', {}) and count < 100:
+        while "next_token" in json_response.get('meta', {}) and count < 10:
             next_token = json_response['meta']['next_token']
             url = f'{url_raw}&next_token={next_token}'
             response = self.connect_to_endpoint(url, session)
